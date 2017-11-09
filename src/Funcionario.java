@@ -68,6 +68,7 @@ public class Funcionario {
         this.valorHora = valorHora;
     }
     
+    //retorna o calculo caso não atenda as condições retorna 0
     public double calculoDeHora(char cat, char tur){
         if(cat=='G' && tur=='N')
             return this.salarioMinimo*18/100;
@@ -75,7 +76,12 @@ public class Funcionario {
             if(cat=='G' && (tur=='M' || tur=='V'))
               return this.salarioMinimo*15/100;
             else 
-                uf(cat='O' && )
+                if(cat=='O' && tur=='N')
+                    return this.salarioMinimo*13/100;
+               else if(cat=='O' && (tur=='M' || tur=='V'))
+                    return this.salarioMinimo*13/100;
+                else
+                    return 0;            
     }
     
     
